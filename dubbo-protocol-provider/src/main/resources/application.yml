@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: dubbo-protocol-provider
+
+# 使用dubbo协议 配置zk为注册中心
+dubbo:
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: zookeeper://127.0.0.1:2181

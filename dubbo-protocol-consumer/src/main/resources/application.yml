@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: dubbo-protocol-consumer
+# 配置zk做dubbo的注册中心
+dubbo:
+  registry:
+    address: zookeeper://127.0.0.1:2181
+  application:
+    qos-enable: false
+
