@@ -5,7 +5,12 @@ spring:
 # 使用dubbo协议 配置zk为注册中心
 dubbo:
   protocol:
-    name: dubbo
-    port: -1
+    name: rest
+    port: 9001
+    server: tomcat
+    contextpath: yzy
   registry:
     address: zookeeper://127.0.0.1:2181
+# 防止和spring boot 内置的启动器的端口冲突
+server:
+  port: 8081

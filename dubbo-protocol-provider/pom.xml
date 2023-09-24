@@ -18,10 +18,29 @@
     </properties>
 
     <dependencies>
+        <!-- api 模块 -->
         <dependency>
             <groupId>com.yzy</groupId>
             <artifactId>dubbo-protocol-api</artifactId>
             <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- 额外引入的tomcat -->
+        <!-- 需要引入tomcat的原因：boot中自带的tomcat版本不符合demo需要的版本 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>tomcat-embed-core</artifactId>
+                    <groupId>org.apache.tomcat.embed</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-core</artifactId>
+            <version>${tomcat.version}</version>
         </dependency>
     </dependencies>
 
